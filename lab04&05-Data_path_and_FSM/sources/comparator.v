@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module comparator(A, B, is_equal, is_great, is_less);
-	parameter WIDTH = 8;
+	parameter WIDTH = 32;
 
 	input [WIDTH-1:0] A, B;
 	output is_equal, is_great, is_less;

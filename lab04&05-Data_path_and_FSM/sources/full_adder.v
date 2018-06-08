@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module full_adder(a, b, c, s);
-	parameter WIDTH = 8;
+	parameter WIDTH = 32;
 
 	input [WIDTH-1:0]	a, b;
 	output [WIDTH-1:0]	s;

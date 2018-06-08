@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module selector_2_to_1(a, b, sel, out);
-  parameter WIDTH = 8;
+  parameter WIDTH = 32;
 
   input [WIDTH-1:0] a;
   input [WIDTH-1:0] b;

@@ -7,9 +7,9 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module topset(clk, rst, start, sum_out, Done, SEG, AN);
+module topset(clk, rst, start, Done, SEG, AN);
   input clk, rst, start;
-  output sum_out, Done;
+  output Done;
   output [7:0] SEG;
   output [7:0] AN;
 

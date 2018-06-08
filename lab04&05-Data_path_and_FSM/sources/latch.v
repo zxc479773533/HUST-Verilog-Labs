@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module latch(clk, rst, ld, d, q);
-  parameter WIDTH = 8;
+  parameter WIDTH = 32;
 
   input clk, rst, ld;
   input [WIDTH-1:0] d;

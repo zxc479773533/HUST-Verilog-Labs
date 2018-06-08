@@ -26,6 +26,11 @@ module fsm_controller(clk, rst, start, next_zero, ld_sum, ld_next, sum_sel, next
 
   assign {ld_sum, ld_next, sum_sel, next_sel, a_sel, done} = output_value;
 
+initial begin
+  state <= START;
+  output_value <= 6'b000000;
+end
+
 always @(posedge clk) begin
   if (rst) begin
     state <= START;
@@ -62,7 +67,7 @@ always @(posedge clk) begin
           state <= START;
           output_value <= 6'b000000;
         end
-        else if (start == 0) begin
+        else if (start == 1) begin
           state <= DONE;
           output_value <= 6'b000001;
         end

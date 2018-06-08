@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module dual_port_ram(data, read_addr, writr_addr, we, clk, q);
-  parameter DATA_WIDTH = 8;
+  parameter DATA_WIDTH = 32;
   parameter ADDR_WIDTH = 4;
 
   input [DATA_WIDTH-1:0] data;
