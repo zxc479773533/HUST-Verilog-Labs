@@ -1,27 +1,23 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //
-// HUST Verilog Experiment 4 and 5 Latch
+// HUST Verilog Experiment 4 and 5 RAM
 //
 // Pan Yue
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module latch(clk, rst, ld, d, q);
+module ram(addr, data);
   parameter WIDTH = 32;
 
-  input clk, rst, ld;
-  input [WIDTH-1:0] d;
-  output reg [WIDTH-1:0] q;
+  input [WIDTH-1:0] addr;
+  output [WIDTH-1:0] data;
+
+  reg [WIDTH-1:0] ram[2**WIDTH-1:0];
 
 initial begin
-  q <= 0;
+  $readmemh("ram_init.txt", ram);
 end
 
-always @(posedge clk) begin
-  if (rst)
-    q <= 0;
-  else if (ld)
-    q <= d;
-end
+assign data = ram[addr];
 endmodule

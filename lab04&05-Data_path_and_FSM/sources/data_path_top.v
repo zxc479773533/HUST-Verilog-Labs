@@ -34,5 +34,5 @@ module data_path_top(clk, rst, ld_sum, ld_next, sum_sel, next_sel, a_sel, next_z
 	selector_2_to_1 S2(.a(RAM_data), .b(0), .sel(next_sel), .out(S2_result));
 	selector_2_to_1 S3(.a(A2_result), .b(L2_result), .sel(a_sel), .out(S3_result));
 
-	dual_port_ram RAM1(.read_addr(S3_result), .we(0), .clk(clk), .q(RAM_data));
+	ram RAM1(.addr(S3_result), .data(RAM_data));
 endmodule

@@ -13,14 +13,8 @@ module selector_2_to_1(a, b, sel, out);
   input [WIDTH-1:0] a;
   input [WIDTH-1:0] b;
   input sel;
-  output reg out;
+  output [WIDTH-1:0] out;
 
-always @(sel or a or b)
-begin
-  if (sel)
-    out <= a;
-  else
-    out <= b;
-end
+  assign out = (sel)? a : b;
 
 endmodule

@@ -7,7 +7,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module topset(clk, rst, start, Done, SEG, AN);
+module topset(clk, rst, start, Done, SEG, AN, ld_sum, ld_next, sum_sel, next_sel, a_sel, next_zero);
   input clk, rst, start;
   output Done;
   output [7:0] SEG;
@@ -15,10 +15,10 @@ module topset(clk, rst, start, Done, SEG, AN);
 
   wire clk_N1, clk_N2;
   wire [31:0]sum_out;
-  wire ld_sum, ld_next;
-  wire sum_sel, next_sel;
-  wire a_sel;
-  wire next_zero;
+  output ld_sum, ld_next;
+  output sum_sel, next_sel;
+  output a_sel;
+  output next_zero;
 
   divider Divider1(.clk(clk), .frequency(1), .clk_N(clk_N1));
   divider Divider2(.clk(clk), .frequency(2000), .clk_N(clk_N2));
