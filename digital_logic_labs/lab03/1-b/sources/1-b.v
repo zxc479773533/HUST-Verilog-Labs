@@ -7,16 +7,15 @@
 //  
 //////////////////////////////////////////////////////////////////////////////////
 
-module simple_sync_seq(clk, t, x, y);
-    input clk;
-    input t, x;
-    output y;
-    wire q0, t1, notq1, clk_N;
+module simple_sync_seq(clk, t, x, y, q0, q1);
+  input clk;
+  input t, x;
+  output y, q0, q1;
+  wire q0, t1, q1, notq1;
 
-    divider divider1(.clk(clk), .clk_N(clk_N));
-    assign t1 = x ^ q0;
-    assign y = ~(x & notq1);
+  assign t1 = x ^ q0;
+  assign y = ~(x & notq1);
 
-    t_trigger t_trigger1(.clk(clk_N), .x(t), .q(q0));
-    t_trigger t_trigger2(.clk(clk_N), .x(t1), .notq(notq1));
+  t_trigger t_trigger1(.clk(clk), .x(t), .q(q0));
+  t_trigger t_trigger2(.clk(clk), .x(t1), .q(q1), .notq(notq1));
 endmodule

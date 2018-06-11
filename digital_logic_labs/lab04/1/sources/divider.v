@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 //
-// HUST Digital Logic Experiment 3: Clock divider
+// HUST Digital Logic Experiment 4 Clock divider
 //
 // Pan Yue
 //  
@@ -10,7 +10,7 @@
 module divider(clk, clk_N);
   input clk;
   output reg clk_N;
-  parameter N = 2;
+  parameter N = 100_000_000;
   reg [31:0] counter;
 
   initial
