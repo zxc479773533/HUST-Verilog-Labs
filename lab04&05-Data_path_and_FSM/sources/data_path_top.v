@@ -20,7 +20,7 @@ module data_path_top(clk, rst, ld_sum, ld_next, sum_sel, next_sel, a_sel, next_z
 	wire [31:0] S1_result, S2_result, S3_result;
 	wire [31:0] RAM_data;
 
-	assign sum_out = L2_result;
+	assign sum_out = L1_result;
 
 	full_adder A1(.a(L1_result), .b(RAM_data), .s(A1_result));
 	full_adder A2(.a(1), .b(L2_result), .s(A2_result));
